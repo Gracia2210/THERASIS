@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THERASIS - Centro Psicológico Profesional</title>
+    <!-- Incluyendo Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind para la fuente Inter y nueva paleta de colores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Nueva Paleta inspirada en Libra y Sentirse Bien
+                        'primary-teal': '#00A79E', // Teal/Turquesa: Confianza y serenidad
+                        'accent-cyan': '#00A2E2', // Cyan: Profesionalismo y salud
+                        'whatsapp-green': '#25D366', // El verde oficial de WhatsApp para mayor impacto
+                        'bg-light': '#F8FAFC', // Fondo muy claro
+                        'text-dark': '#1F2937', // Texto oscuro
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para un mejor aspecto */
+        .hero-background {
+            /* Mantenemos un fondo claro y sutil para la legibilidad del texto */
+            background-color: #dffbff;
+        }
+        /* Estilo para un scroll suave */
+        html { scroll-behavior: smooth; }
+        /* Efecto sutil de hover para tarjetas */
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 20px -5px rgba(0, 167, 158, 0.1), 0 4px 6px -2px rgba(0, 167, 158, 0.05);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJj+zbsJk2fKbI0P8+Hj3a6JkC3z5rW8+5yF08+5E/T5Vz01+7w+6R/R+3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-sans text-text-dark bg-bg-light">
+
+    <!-- Encabezado y Navegación -->
+    <header class="bg-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            
+            <!-- Logo/Nombre del Centro (ICONO DE HOJA/CRECIMIENTO ACTUALIZADO) -->
+            <a href="#" class="flex items-center space-x-2">
+                <!-- SVG que simula la hoja/llama, representando el logo proporcionado -->
+                <svg class="w-8 h-8 text-primary-teal" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.47 2 2 6.47 2 12c0 1.25.26 2.45.74 3.55l-.71 2.49c-.1.35.02.73.29.98l.06.05c.25.27.63.38.98.29l2.49-.71c1.1.48 2.3.74 3.55.74 5.53 0 10-4.47 10-10S17.53 2 12 2zm.84 15.36c.65 0 1.26-.26 1.7-.72.44-.45.72-1.07.72-1.72s-.28-1.27-.72-1.72c-.44-.45-1.05-.72-1.7-.72s-1.26.27-1.7.72c-.44.45-.72 1.07-.72 1.72s.28 1.27.72 1.72c.44.45 1.05.72 1.7.72zM9.82 7.74c.47 0 .92-.18 1.26-.54.34-.35.54-.8.54-1.27s-.2-1-.54-1.35c-.34-.35-.79-.54-1.26-.54s-.92.19-1.26.54c-.34.35-.54.8-.54 1.27s.2 1 .54 1.35c.34.35.79.54 1.26.54zM7.3 11.02c.65 0 1.26-.26 1.7-.72.44-.45.72-1.07.72-1.72s-.28-1.27-.72-1.72c-.44-.45-1.05-.72-1.7-.72s-1.26.27-1.7.72c-.44.45-.72 1.07-.72 1.72s.28 1.27.72 1.72c.44.45 1.05.72 1.7.72zM15.22 11.02c.65 0 1.26-.26 1.7-.72.44-.45.72-1.07.72-1.72s-.28-1.27-.72-1.72c-.44-.45-1.05-.72-1.7-.72s-1.26.27-1.7.72c-.44.45-.72 1.07-.72 1.72s.28 1.27.72 1.72c.44.45 1.05.72 1.7.72z"/>
+                </svg>
+                <span class="text-2xl font-extrabold text-text-dark tracking-wider">
+                    THERASIS
+                </span>
+            </a>
+            <!-- Menú de Navegación (simple) -->
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="#enfoque" class="text-text-dark hover:text-primary-teal transition duration-300">Enfoque</a>
+                <a href="#especialidades" class="text-text-dark hover:text-primary-teal transition duration-300">Especialidades</a>
+                <a href="#equipo" class="text-text-dark hover:text-primary-teal transition duration-300">Equipo</a>
+                <a href="#contacto" class="text-text-dark hover:text-primary-teal transition duration-300">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN CARRUSEL DE IMÁGENES (Elegante y Limpio) -->
+    <section id="carrusel" class="py-10 bg-white overflow-hidden shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative">
+                <!-- Contenedor de las imágenes. Flex y sin envolver (no-wrap) para el carrusel -->
+                <div id="carousel-container" class="flex transition-transform duration-1000 ease-in-out">
+                    <!-- Imagen 1: Oficina/Ambiente cálido -->
+                    <div class="w-full flex-shrink-0">
+                        <img src="img/Captura.PNG" alt="Espacio de calma y reflexión" class="w-full h-96 object-cover rounded-xl shadow-2xl border border-gray-100">
+                    </div>
+                    <!-- Imagen 2: Terapia Online -->
+                    <div class="w-full flex-shrink-0">
+                        <img src="img/unnamed.jpg" alt="Terapia online y flexibilidad" class="w-full h-96 object-cover rounded-xl shadow-2xl border border-gray-100">
+                    </div>
+                    <!-- Imagen 3: Crecimiento y naturaleza -->
+                    <div class="w-full flex-shrink-0">
+                        <img src="img/E26QWOBZO3A7VCMVUDXMLOIM3M.jpg" alt="Crecimiento personal y profesional" class="w-full h-96 object-cover rounded-xl shadow-2xl border border-gray-100">
+                    </div>
+                </div>
+
+                <!-- Flechas de navegación (Izquierda) -->
+                <button id="prev-btn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white p-3 rounded-full shadow-xl transition duration-300 backdrop-blur-sm z-20 focus:outline-none focus:ring-4 focus:ring-primary-teal">
+                    <svg class="w-6 h-6 text-text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <!-- Flechas de navegación (Derecha) -->
+                <button id="next-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white p-3 rounded-full shadow-xl transition duration-300 backdrop-blur-sm z-20 focus:outline-none focus:ring-4 focus:ring-primary-teal">
+                    <svg class="w-6 h-6 text-text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+
+                <!-- Puntos de navegación (Dots) -->
+                <div id="dots-container" class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-20">
+                    <!-- Los puntos se añaden con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Principal (Hero) - AHORA SEGUNDO ELEMENTO -->
+    <main class="hero-background pt-16 pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white/95 p-8 md:p-16 rounded-xl shadow-2xl backdrop-blur-sm max-w-4xl mx-auto border-t-8 border-primary-teal">
+                <p class="text-sm font-semibold text-accent-cyan uppercase tracking-widest mb-4">
+                    CENTRO PSICOLÓGICO ESPECIALIZADO
+                </p>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-text-dark">
+                    Psicoterapia centrada en tu <span class="text-primary-teal">Transformación</span> y Bienestar
+                </h2>
+                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                    THERASIS: Te acompañamos en tu camino hacia una vida más plena, consciente y con herramientas efectivas para afrontar cualquier desafío emocional.
+                </p>
+
+                <!-- BOTÓN DE WHATSAPP (CTA principal) -->
+                <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20THERASIS."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    
+                    class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-bold rounded-lg text-white" 
+                    style="background-color: #25D366; hover:background-color: #1DA851; transition: background-color 300ms ease;">
+                    
+                    <img src="img/icons8-whatsapp.png" 
+                        alt="Icono de WhatsApp" 
+                        class="w-5 h-5 mr-3">
+                    
+                    Agenda tu cita ahora
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN ENFOQUE / VALORES (Inspiración Libra) -->
+    <section id="enfoque" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl md:text-4xl font-extrabold text-center text-text-dark mb-4">
+                Nuestro Enfoque Terapéutico
+            </h3>
+            <p class="text-lg text-center text-gray-500 mb-12 max-w-3xl mx-auto">
+                Trabajamos bajo un modelo integrativo, combinando lo mejor de la Terapia Cognitivo Conductual (TCC) con el enfoque Humanista.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Valor 1: Empatía y Conexión -->
+                <div class="p-6 text-center card-hover transition duration-300 rounded-xl">
+                    <svg class="w-12 h-12 mx-auto text-primary-teal mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    <h4 class="text-xl font-bold text-text-dark mb-2">Compromiso Humano</h4>
+                    <p class="text-gray-600">
+                        Creamos un vínculo de confianza basado en la escucha activa y la confidencialidad absoluta.
+                    </p>
+                </div>
+                <!-- Valor 2: Herramientas Efectivas -->
+                <div class="p-6 text-center card-hover transition duration-300 rounded-xl">
+                    <svg class="w-12 h-12 mx-auto text-accent-cyan mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h4 class="text-xl font-bold text-text-dark mb-2">Resultados Prácticos</h4>
+                    <p class="text-gray-600">
+                        Te enseñamos estrategias cognitivas y conductuales para aplicar en tu vida diaria desde la primera sesión.
+                    </p>
+                </div>
+                <!-- Valor 3: Enfoque Integral -->
+                <div class="p-6 text-center card-hover transition duration-300 rounded-xl">
+                    <svg class="w-12 h-12 mx-auto text-primary-teal mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h4 class="text-xl font-bold text-text-dark mb-2">Proceso a tu Ritmo</h4>
+                    <p class="text-gray-600">
+                        Respetamos tus tiempos de cambio, asegurando un proceso terapéutico seguro y personalizado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ESPECIALIDADES (Inspiración Sentirse Bien/Libra) -->
+    <section id="especialidades" class="py-20 bg-bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl md:text-4xl font-extrabold text-center text-text-dark mb-4">
+                Especialidades y Áreas de Intervención
+            </h3>
+            <p class="text-lg text-center text-gray-500 mb-12 max-w-4xl mx-auto">
+                Nuestros psicólogos están especializados en los problemas más comunes de salud mental en adultos, parejas y adolescentes.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Especialidad 1: Ansiedad y Estrés -->
+                <div class="bg-white p-5 rounded-lg shadow-md border-b-2 border-accent-cyan">
+                    <h4 class="font-bold text-lg text-accent-cyan mb-1">Ansiedad y Estrés</h4>
+                    <p class="text-sm text-gray-600">Terapia específica para el Trastorno de Ansiedad Generalizada, pánico y fobias.</p>
+                </div>
+                <!-- Especialidad 2: Depresión y Duelo -->
+                <div class="bg-white p-5 rounded-lg shadow-md border-b-2 border-primary-teal">
+                    <h4 class="font-bold text-lg text-primary-teal mb-1">Depresión y Duelo</h4>
+                    <p class="text-sm text-gray-600">Manejo de estados de ánimo bajos, falta de motivación y procesos de pérdida.</p>
+                </div>
+                <!-- Especialidad 3: Terapia de Pareja -->
+                <div class="bg-white p-5 rounded-lg shadow-md border-b-2 border-accent-cyan">
+                    <h4 class="font-bold text-lg text-accent-cyan mb-1">Relaciones y Pareja</h4>
+                    <p class="text-sm text-gray-600">Mejora de la comunicación, infidelidad, celos y conflictos relacionales.</p>
+                </div>
+                <!-- Especialidad 4: Autoestima y Habilidades -->
+                <div class="bg-white p-5 rounded-lg shadow-md border-b-2 border-primary-teal">
+                    <h4 class="font-bold text-lg text-primary-teal mb-1">Autoestima y Crecimiento</h4>
+                    <p class="text-sm text-gray-600">Desarrollo de asertividad, confianza y consecución de metas personales.</p>
+                </div>
+                <!-- Especialidad 5: Terapia para Adolescentes (Nuevo) -->
+                <div class="bg-white p-5 rounded-lg shadow-md border-b-2 border-primary-teal">
+                    <h4 class="font-bold text-lg text-primary-teal mb-1">Psicología Adolescente</h4>
+                    <p class="text-sm text-gray-600">Problemas de conducta, rendimiento escolar, bullying e identidad.</p>
+                </div>
+                 <!-- Especialidad 6: Terapia TCC (Nuevo) -->
+                <div class="bg-white p-5 rounded-lg shadow-md border-b-2 border-accent-cyan">
+                    <h4 class="font-bold text-lg text-accent-cyan mb-1">Terapia Cognitivo-Conductual</h4>
+                    <p class="text-sm text-gray-600">Especialistas en la reestructuración de patrones de pensamiento negativos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EQUIPO (Nosotros/Credibilidad) -->
+    <section id="equipo" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-3xl md:text-4xl font-extrabold text-text-dark mb-4">
+                Nuestro Equipo de Psicólogos
+            </h3>
+            <p class="text-lg text-center text-gray-500 mb-12 max-w-2xl mx-auto">
+                Tu proceso estará guiado por profesionales colegiados y con experiencia en el enfoque que necesitas.
+            </p>
+
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:w-1/2 lg:mx-auto">
+    
+                <div class="text-center bg-white p-6 rounded-xl shadow-2xl card-hover transition duration-300">
+                    <img class="mx-auto h-32 w-32 rounded-full object-cover shadow-lg border-4 border-primary-teal/30" 
+                         src="https://placehold.co/128x128/00A79E/FFFFFF?text=Lic.+Fátima" 
+                         alt="Foto de Fátima Marca">
+                    
+                    <h4 class="mt-4 text-xl font-bold text-gray-800">Fátima Carolina Marca Torres</h4>
+                    <p class="text-primary-teal font-semibold">Psicóloga Clínica....</p>
+                    <p class="mt-2 text-sm text-gray-600">Especialista en .....</p>
+                </div>
+            
+                <div class="text-center bg-white p-6 rounded-xl shadow-2xl card-hover transition duration-300">
+                    <img class="mx-auto h-32 w-32 rounded-full object-cover shadow-lg border-4 border-accent-cyan/30" 
+                         src="https://placehold.co/128x128/00A2E2/FFFFFF?text=Lic.+Johan" 
+                         alt="Foto de Johan Salvatierra">
+                    
+                    <h4 class="mt-4 text-xl font-bold text-gray-800">Johan Ely Salvatierra Ruiz</h4>
+                    <p class="text-accent-cyan font-semibold">Psicólogo. ....</p>
+                    <p class="mt-2 text-sm text-gray-600">Experto en ....</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de CTA y Contacto -->
+    <footer id="contacto" class="bg-text-dark py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
+            <h4 class="text-3xl font-bold mb-4 text-whatsapp-green">Da el primer paso hoy</h4>
+            <p class="text-lg mb-6 text-gray-300">
+                Te esperamos en THERASIS para comenzar tu camino.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                <!-- Replicar el botón de WhatsApp con el color principal del footer - ICONO CORREGIDO -->
+                <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20THERASIS."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    
+                    class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-bold rounded-lg text-white" 
+                    style="background-color: #25D366; hover:background-color: #1DA851; transition: background-color 300ms ease;">
+                    
+                    <img src="img/icons8-whatsapp.png" 
+                        alt="Icono de WhatsApp" 
+                        class="w-5 h-5 mr-3">
+                    
+                    Chatea Ahora (WhatsApp)
+                </a>
+                <!-- Email de Contacto -->
+                <p class="flex items-center text-lg text-primary-teal bg-white rounded-lg px-4 py-2 font-semibold shadow-md">
+                    <svg class="w-5 h-5 mr-3 fill-current text-primary-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    info@therasis.com.pe
+                </p>
+            </div>
+            
+            <p class="mt-10 text-sm text-gray-400">
+                &copy; 2024 THERASIS Centro Psicológico. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script para la interactividad del Carrusel -->
+    <script>
+        // Aseguramos que el script se ejecute solo cuando el DOM esté completamente cargado
+        window.onload = function() {
+            const container = document.getElementById('carousel-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const dotsContainer = document.getElementById('dots-container');
+            
+            // Si los elementos no existen (por si se edita el HTML), no intentamos ejecutar el script.
+            if (!container || !prevBtn || !nextBtn || !dotsContainer) return;
+
+            const slides = container.children;
+            const totalSlides = slides.length;
+            let currentIndex = 0;
+            let intervalId;
+
+            // Función para actualizar la posición y los estilos del carrusel
+            function updateCarousel() {
+                // Mover el contenedor horizontalmente usando transform: translateX
+                container.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // Actualizar los puntos (dots)
+                Array.from(dotsContainer.children).forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('bg-primary-teal');
+                        dot.classList.remove('bg-gray-300');
+                    } else {
+                        dot.classList.remove('bg-primary-teal');
+                        dot.classList.add('bg-gray-300');
+                    }
+                });
+            }
+
+            // Función para ir a la siguiente diapositiva (circular)
+            function goToNext() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+                resetInterval();
+            }
+
+            // Función para ir a la diapositiva anterior (circular)
+            function goToPrev() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+                resetInterval();
+            }
+
+            // Crear los puntos de navegación dinámicamente
+            function createDots() {
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition', 'duration-300', 'shadow-md');
+                    dot.setAttribute('data-index', i);
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        updateCarousel();
+                        resetInterval();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+                updateCarousel(); // Inicializar el carrusel y los dots al inicio
+            }
+
+            // Configurar el auto-play (intervalo de 5 segundos)
+            function startInterval() {
+                // Solo iniciar si el carrusel tiene más de una imagen
+                if (totalSlides > 1) {
+                    intervalId = setInterval(goToNext, 5000); // 5000ms = 5 segundos
+                }
+            }
+
+            // Reiniciar el intervalo después de una interacción manual
+            function resetInterval() {
+                clearInterval(intervalId);
+                startInterval();
+            }
+
+            // Event Listeners para las flechas
+            prevBtn.addEventListener('click', goToPrev);
+            nextBtn.addEventListener('click', goToNext);
+
+            // Inicialización de Dots y Auto-Play
+            createDots();
+            startInterval();
+        };
+    </script>
+</body>
+</html>
