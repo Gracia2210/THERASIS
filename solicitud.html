@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Plan - THERASIS</title>
+
+    <link rel="stylesheet" href="styles.css"> 
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Paleta basada en el Logo
+                        'primary-leaf': '#6385BA',   // Azul/Lila principal de la hoja 
+                        'secondary-dark': '#44414A', // Gris Oscuro del texto 
+                        'accent-cyan': '#00A2E2',    // Acento profesional
+                        'whatsapp-green': '#25D366', // El verde oficial de WhatsApp
+                        'bg-light': '#F8FAFC',       // Fondo muy claro
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-sans text-secondary-dark bg-bg-light">
+
+    <header class="bg-white shadow-lg py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="index.html#planes" class="text-lg text-primary-leaf hover:text-accent-cyan transition duration-300">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Volver a Planes
+            </a>
+             <a href="index.html#inicio" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold text-secondary-dark tracking-wider">
+                    THERASIS
+                </span>
+            </a>
+        </div>
+    </header>
+
+    <main id="formulario-planes" class="py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 md:p-10 rounded-xl shadow-2xl border-t-8 border-primary-leaf">
+                <h3 class="text-3xl font-extrabold text-secondary-dark text-center mb-4">
+                    Solicita tu Plan de Bienestar
+                </h3>
+                <p class="text-lg text-center text-gray-600 mb-8">
+                    Completa tus datos y selecciona el plan de interés para que te contactemos a la brevedad.
+                </p>
+
+                <a href="https://wa.me/5215512345678?text=Hola%2C%20estoy%20interesado%20en%20uno%20de%20los%20Planes%20de%20Bienestar.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block w-full text-center mb-6 px-6 py-3 border border-transparent text-lg font-bold rounded-lg text-white transition duration-300 transform hover:scale-105" 
+                    style="background-color: #25D366; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);">
+                    <i class="fa-brands fa-whatsapp mr-3"></i> Pregunta Directamente por WhatsApp
+                </a>
+                
+                <div class="text-center text-sm font-semibold text-gray-500 mb-6">
+                    — O completa el formulario para que te contactemos —
+                </div>
+
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                        <input type="text" name="nombre" id="nombre" required 
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary-leaf focus:border-primary-leaf">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" name="email" id="email" required 
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary-leaf focus:border-primary-leaf">
+                    </div>
+                    <div>
+                        <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono / WhatsApp</label>
+                        <input type="tel" name="telefono" id="telefono" required 
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary-leaf focus:border-primary-leaf">
+                    </div>
+                    <div>
+                        <label for="plan_interes" class="block text-sm font-medium text-gray-700">Plan de Interés</label>
+                        <select id="plan_interes" name="plan_interes" 
+                                class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-leaf focus:border-primary-leaf sm:text-sm rounded-md">
+                            <option value="perfil_360">Perfil 360° (Evaluación)</option>
+                            <option value="pausa_segura">Pausa Segura (Acompañamiento breve)</option>
+                            <option value="pack_equilibrio">Pack Equilibrio (Proceso completo)</option>
+                            <option value="otro" selected>Otro / Aún tengo dudas</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="mensaje" class="block text-sm font-medium text-gray-700">Tu Pregunta (Opcional)</label>
+                        <textarea id="mensaje" name="mensaje" rows="3" 
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary-leaf focus:border-primary-leaf"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-primary-leaf hover:bg-accent-cyan transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-leaf">
+                        Enviar Solicitud
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-secondary-dark py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
+            <p class="text-sm text-gray-400">
+                &copy; 2024 THERASIS Centro Psicológico.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectElement = document.getElementById('plan_interes');
+            if (selectElement) {
+                // Obtener los parámetros de la URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const planParam = urlParams.get('plan');
+                
+                if (planParam) {
+                    // Si el parámetro existe, intenta seleccionar la opción correspondiente
+                    const optionToSelect = selectElement.querySelector(`option[value="${planParam}"]`);
+                    if (optionToSelect) {
+                        selectElement.value = planParam;
+                    } else {
+                        // Si el parámetro es inválido, selecciona "Otro / Dudas"
+                        selectElement.value = "otro"; 
+                    }
+                } else {
+                    // Si no hay parámetro, selecciona "Otro / Dudas" por defecto (ya está en el HTML)
+                    selectElement.value = "otro";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
