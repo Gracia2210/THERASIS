@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THERASIS - Centro Psicológico Profesional</title>
-    <!-- Incluyendo Tailwind CSS -->
+    
+    <link rel="stylesheet" href="styles.css"> 
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuración de Tailwind para la fuente Inter y nueva paleta de colores -->
+    
     <script>
         tailwind.config = {
             theme: {
@@ -26,58 +28,21 @@
             }
         }
     </script>
-    <style>
-        /* Estilos personalizados para un mejor aspecto */
-        .hero-background {
-            /* Usamos un fondo muy sutil que complemente el primary-leaf */
-            background-color: #e6eef4; 
-        }
-        
-        /* SOLUCIÓN CLAVE para que el encabezado fijo no tape el ancla (anchor) */
-        html { 
-            scroll-behavior: smooth; /* Mantiene el scroll suave */
-            scroll-padding-top: 5rem; /* Ajustado a 5rem (80px) para compensar la altura del header fijo */
-        }
-
-        /* Efecto sutil de hover para tarjetas */
-        .card-hover:hover {
-            transform: translateY(-4px);
-            /* Usamos la sombra del color principal (primary-leaf) */
-            box-shadow: 0 15px 20px -5px rgba(99, 133, 186, 0.2), 0 4px 6px -2px rgba(99, 133, 186, 0.1);
-        }
-
-        /* Estilos para las nuevas tarjetas interactivas de "Sobre Nosotros" */
-        .interactive-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border-radius: 1rem;
-            height: 100%; /* Asegura que la altura se ajuste al contenido del grid */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-        }
-        .interactive-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(99, 133, 186, 0.4), 0 8px 10px -6px rgba(99, 133, 186, 0.2);
-        }
-    </style>
-    <!-- Font Awesome para íconos (aunque usamos SVG para los del cuerpo) -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="font-sans text-secondary-dark bg-bg-light">
 
-    <!-- Encabezado y Navegación (Fijo) -->
     <header class="bg-white shadow-lg sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             
-            <!-- Logo/Nombre del Centro -->
             <a href="#inicio" class="flex items-center space-x-2">
-                <!-- LOGO (Con fallback por si la imagen local no carga) -->
                 <img src="img/logo_sin fondo.png" onerror="this.onerror=null;this.src='https://placehold.co/32x32/6385BA/FFFFFF?text=L';" alt="Logo Therasis" class="w-5 h-8 mr-2">
-                <!-- Color del texto: secondary-dark -->
                 <span class="text-2xl font-bold text-secondary-dark tracking-wider">
                     THERASIS
                 </span>
             </a>
             
-            <!-- Menú de Navegación -->
             <nav class="hidden md:flex space-x-8 text-lg">
                 <a href="#inicio" class="text-secondary-dark hover:text-primary-leaf transition duration-300">Inicio</a>
                 <a href="#nosotros" class="text-secondary-dark hover:text-primary-leaf transition duration-300">Nosotros</a>
@@ -91,44 +56,34 @@
 
     
     
-    <!-- SECCIÓN CARRUSEL DE IMÁGENES (MANTENEMOS EL ID PARA EL SCRIPT) -->
     <section id="carrusel" class="py-10 bg-white overflow-hidden shadow-inner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="relative">
-                <!-- Contenedor de las imágenes. Flex y sin envolver (no-wrap) para el carrusel -->
                 <div id="carousel-container" class="flex transition-transform duration-1000 ease-in-out">
-                    <!-- Imagen 1: Oficina/Ambiente cálido -->
                     <div class="w-full flex-shrink-0">
                         <img src="img/Captura.PNG" onerror="this.onerror=null;this.src='https://placehold.co/1200x384/e6eef4/6385BA?text=Espacio+de+Terapia+1';" alt="Espacio de calma y reflexión" class="w-full h-96 object-cover rounded-xl shadow-2xl border border-gray-100">
                     </div>
-                    <!-- Imagen 2: Terapia Online -->
                     <div class="w-full flex-shrink-0">
                         <img src="img/unnamed.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1200x384/e6eef4/6385BA?text=Terapia+Online';" alt="Terapia online y flexibilidad" class="w-full h-96 object-cover rounded-xl shadow-2xl border border-gray-100">
                     </div>
-                    <!-- Imagen 3: Crecimiento y naturaleza -->
                     <div class="w-full flex-shrink-0">
                         <img src="img/E26QWOBZO3A7VCMVUDXMLOIM3M.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1200x384/e6eef4/6385BA?text=Crecimiento+Personal';" alt="Crecimiento personal y profesional" class="w-full h-96 object-cover rounded-xl shadow-2xl border border-gray-100">
                     </div>
                 </div>
 
-                <!-- Flechas de navegación (Izquierda) -->
                 <button id="prev-btn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white p-3 rounded-full shadow-xl transition duration-300 backdrop-blur-sm z-20 focus:outline-none focus:ring-4 focus:ring-primary-leaf">
                     <svg class="w-6 h-6 text-secondary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
-                <!-- Flechas de navegación (Derecha) -->
                 <button id="next-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white p-3 rounded-full shadow-xl transition duration-300 backdrop-blur-sm z-20 focus:outline-none focus:ring-4 focus:ring-primary-leaf">
                     <svg class="w-6 h-6 text-secondary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
 
-                <!-- Puntos de navegación (Dots) -->
                 <div id="dots-container" class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-20">
-                    <!-- Los puntos se añaden con JavaScript -->
-                </div>
+                    </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN PRINCIPAL / HERO (ID: inicio) -->
     <main id="inicio" class="hero-background pt-16 pb-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="bg-white/95 p-8 md:p-16 rounded-xl shadow-2xl backdrop-blur-sm max-w-4xl mx-auto border-t-8 border-primary-leaf">
@@ -142,7 +97,6 @@
                     En Therasis nos comprometemos a brindar una atención humana, responsable y basada en la evidencia, priorizando siempre el bienestar emocional de quienes confían en nosotros y promoviendo el desarrollo continuo de futuros profesionales en salud mental.
                 </p>
 
-                <!-- BOTÓN DE WHATSAPP (CTA principal) -->
                 <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20THERASIS."
                     target="_blank"
                     rel="noopener noreferrer"
@@ -158,7 +112,6 @@
         </div>
     </main>
     
-    <!-- SECCIÓN: SOBRE NOSOTROS (Ancla: #nosotros) - CON TEXTO ORIGINAL EN TARJETAS INTERACTIVAS -->
     <section id="nosotros" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-3xl md:text-4xl font-extrabold text-secondary-dark text-center mb-12">
@@ -167,7 +120,6 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
-                <!-- Tarjeta 1: Misión y Propósito (Columna 1) -->
                 <div class="interactive-card bg-bg-light p-8 flex flex-col justify-start border-t-8 border-primary-leaf">
                     <div>
                         <div class="flex items-center mb-4">
@@ -183,7 +135,6 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta 2: Servicios y Metodología (Columna 2) -->
                 <div class="interactive-card bg-bg-light p-8 flex flex-col justify-start border-t-8 border-accent-cyan">
                     <div>
                         <div class="flex items-center mb-4">
@@ -203,7 +154,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN ENFOQUE / VALORES (Ancla: #enfoque) -->
     <section id="enfoque" class="py-20 bg-bg-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-3xl md:text-4xl font-extrabold text-secondary-dark text-center mb-4">
@@ -214,7 +164,6 @@
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Valor 1: Compromiso Humano -->
                 <div class="p-6 text-center card-hover transition duration-300 rounded-xl">
                     <svg class="w-12 h-12 mx-auto text-primary-leaf mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                     <h4 class="text-xl font-bold text-secondary-dark mb-2">Compromiso Humano</h4>
@@ -222,7 +171,6 @@
                         Creamos un vínculo de confianza basado en la escucha activa y la confidencialidad absoluta.
                     </p>
                 </div>
-                <!-- Valor 2: Resultados Prácticos -->
                 <div class="p-6 text-center card-hover transition duration-300 rounded-xl">
                     <svg class="w-12 h-12 mx-auto text-accent-cyan mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     <h4 class="text-xl font-bold text-secondary-dark mb-2">Resultados Prácticos</h4>
@@ -230,7 +178,6 @@
                         Te enseñamos estrategias cognitivas y conductuales para aplicar en tu vida diaria desde la primera sesión.
                     </p>
                 </div>
-                <!-- Valor 3: Proceso a tu Ritmo -->
                 <div class="p-6 text-center card-hover transition duration-300 rounded-xl">
                     <svg class="w-12 h-12 mx-auto text-primary-leaf mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <h4 class="text-xl font-bold text-secondary-dark mb-2">Proceso a tu Ritmo</h4>
@@ -242,7 +189,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN ESPECIALIDADES (Ancla: #especialidades) -->
     <section id="especialidades" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-3xl md:text-4xl font-extrabold text-secondary-dark text-center mb-4">
@@ -253,32 +199,26 @@
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Especialidad 1: Ansiedad y Estrés -->
                 <div class="bg-bg-light p-5 rounded-lg shadow-md border-b-2 border-accent-cyan">
                     <h4 class="font-bold text-lg text-accent-cyan mb-1">Ansiedad y Estrés</h4>
                     <p class="text-sm text-gray-600">Terapia específica para el Trastorno de Ansiedad Generalizada, pánico y fobias.</p>
                 </div>
-                <!-- Especialidad 2: Depresión y Duelo -->
                 <div class="bg-bg-light p-5 rounded-lg shadow-md border-b-2 border-primary-leaf">
                     <h4 class="font-bold text-lg text-primary-leaf mb-1">Depresión y Duelo</h4>
                     <p class="text-sm text-gray-600">Manejo de estados de ánimo bajos, falta de motivación y procesos de pérdida.</p>
                 </div>
-                <!-- Especialidad 3: Terapia de Pareja -->
                 <div class="bg-bg-light p-5 rounded-lg shadow-md border-b-2 border-accent-cyan">
                     <h4 class="font-bold text-lg text-accent-cyan mb-1">Relaciones y Pareja</h4>
                     <p class="text-sm text-gray-600">Mejora de la comunicación, infidelidad, celos y conflictos relacionales.</p>
                 </div>
-                <!-- Especialidad 4: Autoestima y Habilidades -->
                 <div class="bg-bg-light p-5 rounded-lg shadow-md border-b-2 border-primary-leaf">
                     <h4 class="font-bold text-lg text-primary-leaf mb-1">Autoestima y Crecimiento</h4>
                     <p class="text-sm text-gray-600">Desarrollo de asertividad, confianza y consecución de metas personales.</p>
                 </div>
-                <!-- Especialidad 5: Terapia para Adolescentes (Nuevo) -->
                 <div class="bg-bg-light p-5 rounded-lg shadow-md border-b-2 border-primary-leaf">
                     <h4 class="font-bold text-lg text-primary-leaf mb-1">Psicología Adolescente</h4>
                     <p class="text-sm text-gray-600">Problemas de conducta, rendimiento escolar, bullying e identidad.</p>
                 </div>
-                <!-- Especialidad 6: Terapia TCC (Nuevo) -->
                 <div class="bg-bg-light p-5 rounded-lg shadow-md border-b-2 border-accent-cyan">
                     <h4 class="font-bold text-lg text-accent-cyan mb-1">Terapia Cognitivo-Conductual</h4>
                     <p class="text-sm text-gray-600">Especialistas en la reestructuración de patrones de pensamiento negativos.</p>
@@ -287,7 +227,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN EQUIPO (Ancla: #equipo) -->
     <section id="equipo" class="py-20 bg-bg-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-3xl md:text-4xl font-extrabold text-secondary-dark mb-4">
@@ -301,8 +240,8 @@
     
                 <div class="text-center bg-white p-6 rounded-xl shadow-2xl card-hover transition duration-300">
                     <img class="mx-auto h-32 w-32 rounded-full object-cover shadow-lg border-4 border-primary-leaf/30" 
-                         src="https://placehold.co/128x128/6385BA/FFFFFF?text=Lic.+Fátima" 
-                         alt="Foto de Fátima Marca">
+                            src="https://placehold.co/128x128/6385BA/FFFFFF?text=Lic.+Fátima" 
+                            alt="Foto de Fátima Marca">
                     
                     <h4 class="mt-4 text-xl font-bold text-gray-800">Fátima Carolina Marca Torres</h4>
                     <p class="text-primary-leaf font-semibold">Psicóloga Clínica....</p>
@@ -311,10 +250,10 @@
             
                 <div class="text-center bg-white p-6 rounded-xl shadow-2xl card-hover transition duration-300">
                     <img class="mx-auto h-32 w-32 rounded-full object-cover shadow-lg border-4 border-accent-cyan/30" 
-                         src="https://placehold.co/128x128/00A2E2/FFFFFF?text=Lic.+Johan" 
-                         alt="Foto de Johan Salvatierra">
+                            src="https://placehold.co/128x128/00A2E2/FFFFFF?text=Lic.+Johan" 
+                            alt="Foto de Johan Salvatierra">
                     
-                    <h4 class="mt-4 text-xl font-bold text-gray-800">Johan Ely Salvatierra Ruiz</h4>
+                    <h4 class="mt-4 text-xl font-bold text-gray-800">Johan Ely Salvatierra Ruiz</h4>
                     <p class="text-accent-cyan font-semibold">Psicólogo. ....</p>
                     <p class="mt-2 text-sm text-gray-600">Experto en ....</p>
                 </div>
@@ -323,7 +262,6 @@
         </div>
     </section>
 
-    <!-- Sección de CTA y Contacto (Ancla: #contacto) -->
     <footer id="contacto" class="bg-secondary-dark py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
             <h4 class="text-3xl font-bold mb-4 text-whatsapp-green">Da el primer paso hoy</h4>
@@ -332,7 +270,6 @@
             </p>
             
             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
-                <!-- Botón de WhatsApp -->
                 <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20THERASIS."
                     target="_blank"
                     rel="noopener noreferrer"
@@ -344,7 +281,6 @@
                     
                     Chatea Ahora (WhatsApp)
                 </a>
-                <!-- Email de Contacto -->
                 <p class="flex items-center text-lg text-primary-leaf bg-white rounded-lg px-4 py-2 font-semibold shadow-md">
                     <svg class="w-5 h-5 mr-3 fill-current text-primary-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     info@therasis.com.pe
@@ -357,92 +293,6 @@
         </div>
     </footer>
 
-    <!-- Script para la interactividad del Carrusel (MANTENIDO) -->
-    <script>
-        // Aseguramos que el script se ejecute solo cuando el DOM esté completamente cargado
-        window.onload = function() {
-            const container = document.getElementById('carousel-container');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const dotsContainer = document.getElementById('dots-container');
-            
-            // Si los elementos no existen (por si se edita el HTML), no intentamos ejecutar el script.
-            if (!container || !prevBtn || !nextBtn || !dotsContainer) return;
-
-            const slides = container.children;
-            const totalSlides = slides.length;
-            let currentIndex = 0;
-            let intervalId;
-
-            // Función para actualizar la posición y los estilos del carrusel
-            function updateCarousel() {
-                // Mover el contenedor horizontalmente usando transform: translateX
-                container.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-                // Actualizar los puntos (dots)
-                Array.from(dotsContainer.children).forEach((dot, index) => {
-                    if (index === currentIndex) {
-                        dot.classList.add('bg-primary-leaf'); // Usando el nuevo color principal
-                        dot.classList.remove('bg-gray-300');
-                    } else {
-                        dot.classList.remove('bg-primary-leaf');
-                        dot.classList.add('bg-gray-300');
-                    }
-                });
-            }
-
-            // Función para ir a la siguiente diapositiva (circular)
-            function goToNext() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateCarousel();
-                resetInterval();
-            }
-
-            // Función para ir a la diapositiva anterior (circular)
-            function goToPrev() {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateCarousel();
-                resetInterval();
-            }
-
-            // Crear los puntos de navegación dinámicamente
-            function createDots() {
-                for (let i = 0; i < totalSlides; i++) {
-                    const dot = document.createElement('button');
-                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition', 'duration-300', 'shadow-md');
-                    dot.setAttribute('data-index', i);
-                    dot.addEventListener('click', () => {
-                        currentIndex = i;
-                        updateCarousel();
-                        resetInterval();
-                    });
-                    dotsContainer.appendChild(dot);
-                }
-                updateCarousel(); // Inicializar el carrusel y los dots al inicio
-            }
-
-            // Configurar el auto-play (intervalo de 5 segundos)
-            function startInterval() {
-                // Solo iniciar si el carrusel tiene más de una imagen
-                if (totalSlides > 1) {
-                    intervalId = setInterval(goToNext, 5000); // 5000ms = 5 segundos
-                }
-            }
-
-            // Reiniciar el intervalo después de una interacción manual
-            function resetInterval() {
-                clearInterval(intervalId);
-                startInterval();
-            }
-
-            // Event Listeners para las flechas
-            prevBtn.addEventListener('click', goToPrev);
-            nextBtn.addEventListener('click', goToNext);
-
-            // Inicialización de Dots y Auto-Play
-            createDots();
-            startInterval();
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
